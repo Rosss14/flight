@@ -57,4 +57,12 @@ public class Flight {
 		return true;
 		
 	}
+	public boolean equals1 (Flight otherFlight) {
+		if (flightCode == otherFlight.getCode() && airportOrigin == otherFlight.getOrigin() && airportDestination == otherFlight.getDestination()) {
+			return true;
+		}
+		else {
+			return false;
+		}
+	}
 }
