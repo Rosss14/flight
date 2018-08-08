@@ -47,22 +47,14 @@ public class Flight {
 		return airportDestination;	
 	}
 	public boolean equals (Flight otherFlight){
-		int difChar = 0;
-		for (i=0 ; i <= flightCode.length ; i ++){
+		for ( int i = 0 ; i < flightCode.length() ; i ++){
 			char myChar = flightCode.charAt(i);
 			char otherChar = otherFlight.flightCode.charAt(i);
-			if (myChar == otherChar){
-				difChar = difChar;
-			}
-			else{
-				difChar += 1;
+			if (myChar != otherChar){
+				return false;
 			}
 		}
-		if (difChar == 0){
-			return true;
-		}
-		else{
-			return false;
-		}
+		return true;
+		
 	}
 }
