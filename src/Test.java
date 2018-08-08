@@ -1,15 +1,15 @@
 public class Test{
 	static Flight fl1 = new Flight("LH1523");
-	static Flight fl2 = new Flight("LH1523");
+	static Flight fl2 = new Flight("Lh1523");
 	static Flight fl3 = new Flight("RA1324");
 
 	public static void setAirports(String []args) {
 		fl1.setOrigin("Munich");
 		fl1.setDestination("Frankfurt");
 		fl2.setOrigin("Munich");
-		fl2.setDestination("Frankfurt");
+		fl2.setDestination("FRankfurt");
 		fl3.setOrigin("Dublin");
-		fl3.setDestination("Stockholm");
+		fl3.setDestination("StockHolm");
 	}
 	
 	public static void testComparison(String []args) {

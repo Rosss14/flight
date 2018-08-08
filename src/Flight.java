@@ -58,11 +58,12 @@ public class Flight {
 		
 	}
 	public boolean equals1 (Flight otherFlight) {
-		if (flightCode == otherFlight.getCode() && airportOrigin == otherFlight.getOrigin() && airportDestination == otherFlight.getDestination()) {
+		if (flightCode.equalsIgnoreCase(otherFlight.getCode()) && airportOrigin.equalsIgnoreCase(otherFlight.getOrigin()) && airportDestination.equalsIgnoreCase(otherFlight.getDestination())) {
 			return true;
 		}
 		else {
 			return false;
 		}
 	}
+	
 }
