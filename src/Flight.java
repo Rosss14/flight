@@ -63,9 +63,9 @@ public class Flight {
         for (int i = 0; i < flightCode.length(); i++) {
             char myChar = flightCode.charAt(i);
             char otherChar = otherFlight.flightCode.charAt(i);
-            if (myChar != otherChar) {
+            if (myChar != otherChar)
                 return false;
-            }
+
         }
         return true;
 
@@ -79,6 +79,7 @@ public class Flight {
     }
 
     public String toString() {
+        // TODO: Add print of a Flight as it is required in task
         return this.getCode();
     }
 }
