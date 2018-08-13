@@ -65,7 +65,9 @@ public class Flight {
 			return false;
 		}
 	}
-	public String textRepresentation() {
+
+	
+	public String toString() {
 		StringBuffer sb = new StringBuffer(""+ flightCode.toUpperCase());
 		sb.append(": "+airportOrigin);
 		sb.append(" -> "+airportDestination);
@@ -73,10 +75,6 @@ public class Flight {
 		sb.append(", "+ duration);
 		sb.append(" min.)");
 		return sb.toString();
-	}
-	
-	public String toString() {
-        return this.getCode();
     }
 	
 	

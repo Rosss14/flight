@@ -23,7 +23,7 @@ public class Test{
 		System.out.println(fl1.equals(fl2));
 		System.out.println(fl1.equals(fl3));
 		System.out.println(fl2.equals(fl2));
-		System.out.println(fl1.textRepresentation());
+		System.out.println(fl1.toString());
 	}
 	
 
@@ -31,7 +31,7 @@ public class Test{
 		fo.sortFlightsAlt();
 		//fo.sortFlights();
 		for (int i=0;i<fo.getFlights().length;i++) {
-			System.out.println(""+fo.getFlights()[i].textRepresentation());
+			System.out.println(""+fo.getFlights()[i].toString());
 		}
 		System.out.println(fo.toString());
 		
