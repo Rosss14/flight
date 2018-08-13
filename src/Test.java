@@ -30,9 +30,6 @@ public class Test{
 	public static void main(String []args) {
 		fo.sortFlightsAlt();
 		//fo.sortFlights();
-		for (int i=0;i<fo.getFlights().length;i++) {
-			System.out.println(""+fo.getFlights()[i].toString());
-		}
 		System.out.println(fo.toString());
 		
 	}
