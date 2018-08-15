@@ -16,13 +16,12 @@ public class Flight {
 	public void setHour(Hora hora) {
 		hour = hora;
 	}
-	public void setDuration(int dur) {
-		try{
+	public void setDuration(int dur) throws FlightsException {
 			duration = dur;
 			if (duration<0) {
-				throw new FlightsException();
+				throw new FlightsException("Duration negative");
 			}
-		}catch (FlightsException ex) {System.err.println("Duration negative");};
+		
 	}
 	public void setOrigin(String origin) {
 		airportOrigin = origin;
