@@ -17,7 +17,12 @@ public class Flight {
 		hour = hora;
 	}
 	public void setDuration(int dur) {
-		duration = dur;
+		try{
+			duration = dur;
+			if (duration<0) {
+				throw new FlightsException();
+			}
+		}catch (FlightsException ex) {System.err.println("Duration negative");};
 	}
 	public void setOrigin(String origin) {
 		airportOrigin = origin;
