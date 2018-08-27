@@ -5,9 +5,8 @@ public class FlightOperator {
     public FlightOperator(Flight[] flights) {
         this.flights = flights;
     }
-
     public Flight[] getFlights() {
-        return this.flights;
+    	return this.flights;
     }
 
     public void sortFlights() {
@@ -30,32 +29,32 @@ public class FlightOperator {
             }
         }
     }
-
+    
     public void sortFlightsAlt() {
-        for (int i = 0; i < this.flights.length; i++) {
-            for (int j = i + 1; j < this.flights.length; j++) {
-                if (this.flights[i].getLandHour().getHora() > this.flights[j].getLandHour().getHora())
-                    swap(i, j);
-                if (this.flights[i].getLandHour().getHora() == this.flights[j].getLandHour().getHora()) {
-                    if (this.flights[i].getLandHour().getMinuto() > this.flights[j].getLandHour().getMinuto())
-                        swap(i, j);
-                    if (this.flights[i].getLandHour().getMinuto() == this.flights[j].getLandHour().getMinuto()) {
-                        if (this.flights[i].getOrigin().compareToIgnoreCase(this.flights[j].getOrigin()) > 0)
-                            swap(i, j);
+    	for (int i = 0; i<this.flights.length; i++) {
+    		for (int j = i+1; j<this.flights.length; j++) {
+    			if (this.flights[i].getLandHour().getHora()>this.flights[j].getLandHour().getHora())
+    				swap(i, j);
+    			if (this.flights[i].getLandHour().getHora()==this.flights[j].getLandHour().getHora()) {
+    				if (this.flights[i].getLandHour().getMinuto()>this.flights[j].getLandHour().getMinuto())
+    					swap(i, j);
+    				if (this.flights[i].getLandHour().getMinuto()==this.flights[j].getLandHour().getMinuto()) {
+    					if (this.flights[i].getOrigin().compareToIgnoreCase(this.flights[j].getOrigin()) > 0)
+    	                    swap(i, j);
 
-                        if (this.flights[i].getOrigin().compareToIgnoreCase(this.flights[j].getOrigin()) == 0
-                                && this.flights[i].getDestination().compareToIgnoreCase(this.flights[j].getDestination()) > 0)
-                            swap(i, j);
+    	                if (this.flights[i].getOrigin().compareToIgnoreCase(this.flights[j].getOrigin()) == 0
+    	                        && this.flights[i].getDestination().compareToIgnoreCase(this.flights[j].getDestination()) > 0)
+    	                    swap(i, j);
 
-                        if (this.flights[i].getOrigin().compareToIgnoreCase(this.flights[j].getOrigin()) == 0
-                                && this.flights[i].getDestination().compareToIgnoreCase(this.flights[j].getDestination()) == 0
-                                && this.flights[i].getCode().compareToIgnoreCase(this.flights[j].getCode()) > 0) {
-                            swap(i, j);
-                        }
-                    }
-                }
-            }
-        }
+    	                if (this.flights[i].getOrigin().compareToIgnoreCase(this.flights[j].getOrigin()) == 0
+    	                        && this.flights[i].getDestination().compareToIgnoreCase(this.flights[j].getDestination()) == 0
+    	                        && this.flights[i].getCode().compareToIgnoreCase(this.flights[j].getCode()) > 0) {
+    	                    swap(i, j);
+    				}
+    			}
+    		}
+    	}
+    	}
     }
 
 
@@ -80,14 +79,34 @@ public class FlightOperator {
         fl3.setDestination("StockHolm");
         fl4.setOrigin("Dublin");
         fl4.setDestination("Tallinn");
-        fl1.setHour(new Hora(12, 00));
-        fl2.setHour(new Hora(13, 20));
-        fl3.setHour(new Hora(13, 30));
-        fl4.setHour(new Hora(14, 00));
-        fl1.setDuration(30);
-        fl2.setDuration(160);
-        fl3.setDuration(150);
-        fl4.setDuration(190);
+        fl1.setHour(new Hora(12,00));
+        fl2.setHour(new Hora(13,20));
+        fl3.setHour(new Hora(13,30));
+        fl4.setHour(new Hora(14,00));
+        try {
+			fl1.setDuration(30);
+		} catch (FlightsException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+        try {
+			fl2.setDuration(160);
+		} catch (FlightsException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+        try {
+			fl3.setDuration(150);
+		} catch (FlightsException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+        try {
+			fl4.setDuration(190);
+		} catch (FlightsException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
         listFlights[0] = fl1;
         listFlights[1] = fl2;
         listFlights[2] = fl3;
@@ -95,7 +114,7 @@ public class FlightOperator {
         return listFlights;
     }
 
-    public String toString() {
+    public String toString(){
         String print = "";
         for (int i = 0; i < this.flights.length; ++i) {
             print += this.flights[i].toString();
